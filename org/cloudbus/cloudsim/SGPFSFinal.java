@@ -6,6 +6,8 @@ import org.cloudbus.cloudsim.provisioners.*;
 
 public class SGPFSFinal {
 
+    private static final Scanner INPUT = new Scanner(System.in);
+
     public static void main(String[] args) {
 
         try {
@@ -24,7 +26,7 @@ public class SGPFSFinal {
 
             // CLOUDLETS
             List<Cloudlet> cloudletList = new ArrayList<>();
-            long[] lengths = {40000, 10000, 30000, 20000, 5000};
+            long[] lengths = readCloudletLengths();
 
             for (int i = 0; i < lengths.length; i++) {
                 Cloudlet c = new Cloudlet(
@@ -62,6 +64,58 @@ public class SGPFSFinal {
 
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    private static long[] readCloudletLengths() {
+
+        int count = readPositiveInt("Enter number of cloudlets: ");
+        long[] lengths = new long[count];
+
+        for (int i = 0; i < count; i++) {
+            lengths[i] = readPositiveLong("Enter length for cloudlet " + i + ": ");
+        }
+
+        return lengths;
+    }
+
+    private static int readPositiveInt(String prompt) {
+
+        while (true) {
+            System.out.print(prompt);
+            if (!INPUT.hasNextInt()) {
+                System.out.println("Please enter a valid integer.");
+                INPUT.next();
+                continue;
+            }
+
+            int value = INPUT.nextInt();
+            if (value <= 0) {
+                System.out.println("Value must be greater than 0.");
+                continue;
+            }
+
+            return value;
+        }
+    }
+
+    private static long readPositiveLong(String prompt) {
+
+        while (true) {
+            System.out.print(prompt);
+            if (!INPUT.hasNextLong()) {
+                System.out.println("Please enter a valid long integer.");
+                INPUT.next();
+                continue;
+            }
+
+            long value = INPUT.nextLong();
+            if (value <= 0L) {
+                System.out.println("Value must be greater than 0.");
+                continue;
+            }
+
+            return value;
         }
     }
 
