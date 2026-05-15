@@ -12,7 +12,7 @@ function NavBar() {
       <NavLink to="/" className="brand">
         <span className="brand-mark">CL</span>
         <span className="brand-copy">
-          <strong>CloudSim Lab</strong>
+          <strong>CloudSim SGPFS</strong>
           <small>Model. Simulate. Compare.</small>
         </span>
       </NavLink>

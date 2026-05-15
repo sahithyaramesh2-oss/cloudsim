@@ -22,18 +22,6 @@ ROOT_DIR = Path(__file__).resolve().parents[1]
 BUILD_DIR = ROOT_DIR / "build" / "classes"
 
 SIMULATORS: dict[str, SimulatorInfo] = {
-    "cloudsim-example-1": SimulatorInfo(
-        id="cloudsim-example-1",
-        class_name="org.cloudbus.cloudsim.examples.CloudSimExample1",
-        name="CloudSim Example 1",
-        supports_custom_lengths=False,
-    ),
-    "cloudsim-example-2": SimulatorInfo(
-        id="cloudsim-example-2",
-        class_name="org.cloudbus.cloudsim.examples.CloudSimExample2",
-        name="CloudSim Example 2",
-        supports_custom_lengths=False,
-    ),
     "sgpfs-final": SimulatorInfo(
         id="sgpfs-final",
         class_name="org.cloudbus.cloudsim.SGPFSFinal",
