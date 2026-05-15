@@ -17,7 +17,7 @@ const highlights = [
 
 const stats = [
   { value: "30+", label: "CloudSim Core Classes" },
-  { value: "10+", label: "Trace Date Sets" },
+  { value: "5+", label: "Algorithms Compared" },
   { value: "4", label: "Primary User Flows" }
 ];
 
@@ -35,9 +35,6 @@ function HomePage() {
           <div className="hero-actions">
             <Link to="/simulator" className="btn btn-primary">
               Open Simulator Flow
-            </Link>
-            <Link to="/datasets" className="btn btn-muted">
-              Browse Datasets
             </Link>
           </div>
         </div>
