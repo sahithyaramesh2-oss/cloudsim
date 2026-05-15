@@ -13,6 +13,8 @@ The goal is to improve task execution efficiency by prioritizing jobs based on t
 
 * Java
 * CloudSim 3.0
+* FastAPI
+* React + Vite
 * VS Code
 
 ---
@@ -42,21 +44,44 @@ In this implementation, scheduling is applied by sorting cloudlets before execut
 ## 📂 Project Structure
 
 ```
-cloudsim/
- ├── src/
- │    └── org/cloudbus/cloudsim/
- │         └── SGPFSFinal.java
- ├── examples/
- └── README.md
+app/
+   main.py
+   models.py
+frontend/
+   src/
+   package.json
+org/
+   cloudbus/cloudsim/
+      SGPFSFinal.java
 ```
 
 ---
 
 ## ▶️ How to Run
 
+### Backend (FastAPI)
+
+```bash
+python -m pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
+
+API health check: http://localhost:8000/api/health
+
+### Frontend (Vite + React)
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Vite dev server: http://localhost:5173
+
+### Java Simulator (Standalone)
+
 1. Open the project in VS Code
-2. Navigate to:
-   src/org/cloudbus/cloudsim/SGPFSFinal.java
+2. Navigate to: org/cloudbus/cloudsim/SGPFSFinal.java
 3. Right-click → **Run Java**
 
 ---
